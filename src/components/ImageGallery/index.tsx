@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../../App.css";
 import LazyImage from "../LazyImage/LazyImage";
-import { Button, Form, Row, Col } from 'react-bootstrap'
+import { Form, Row, Col } from 'react-bootstrap'
 
 function ImageGallery() {
 
