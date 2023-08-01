@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import "./ImageGallery.css";
 import CardImage from "../CardImage";
+import Pagination from "../Pagination";
 import { Form, Row, Col, Spinner } from "react-bootstrap";
+const PAGE_SIZE = 8; // Number of items per page
 
 const ImageGallery: React.FC = () => {
   const [res, setRes] = useState<any[]>([]);
@@ -10,6 +12,11 @@ const ImageGallery: React.FC = () => {
   const [window, setWindow] = useState<string>("day");
   const [showViral, setShowViral] = useState<string>("true");
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const startIndex = (currentPage - 1) * PAGE_SIZE;
+  const endIndex = startIndex + PAGE_SIZE;
+  const currentData = res.slice(startIndex, endIndex);
 
   const apiImgur = `https://api.imgur.com/3/gallery/${section}/${sort}/${window}/viral/0?showViral=${showViral}`;
   const apiKey = "7d924b1673a19ea";
@@ -96,11 +103,19 @@ const ImageGallery: React.FC = () => {
       {isLoading ? (
         <Spinner animation="border" className="d-flex m-auto mt-3" />
       ) : (
-        <div className="container flexbox container-images">
-          {res.map((item, index) => (
-            <CardImage image={item} key={index} />
-          ))}
-        </div>
+        <>
+          <div className="container flexbox container-images">
+            {currentData.map((item, index) => (
+              <CardImage image={item} key={index} />
+            ))}
+          </div>
+          <Pagination
+            currentPage={currentPage}
+            endIndex={endIndex}
+            res={res}
+            setCurrentPage={setCurrentPage}
+          />
+        </>
       )}
     </>
   );
