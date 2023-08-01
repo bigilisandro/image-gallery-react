@@ -33,6 +33,7 @@
   "eslintConfig": {
     "extends": [
       "react-app",
+      "plugin:prettier/recommended",
       "react-app/jest"
     ]
   },
@@ -47,5 +48,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0"
   }
 }
