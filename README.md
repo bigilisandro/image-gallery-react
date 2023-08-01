@@ -3,7 +3,7 @@
 
 ## 📜 Description
 
-This project is a Image Gallery that consumes images from Imgur API and allows users to filter results in section, sort, window and viral. The Gallery uses React, Redux, TypeScript and React-Bootstrap as Frontend tools.
+This project is a Image Gallery that consumes images from Imgur API and allows users to filter results in section, sort, window and viral. The Gallery uses React, TypeScript and React-Bootstrap as Frontend tools.
 
 ## 🌐 Links
 
@@ -12,7 +12,7 @@ This project is a Image Gallery that consumes images from Imgur API and allows u
 
 ## 💻 Tech Used
 
-- [x] React/Redux
+- [x] React
 - [x] Tests: Jest + react-testing-library / enzyme
 - [x] Typescript
 - [x] React-Bootstrap

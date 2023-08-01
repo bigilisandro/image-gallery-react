@@ -47,7 +47,7 @@ const ImageGallery: React.FC = () => {
         data-test-id="container-wrapper"
       >
         <h1 className="text-center mb-4 text-white">
-          🚀 Image Gallery with React, Redux and TypeScript 💨
+          🚀 Image Gallery with React, TypeScript and React-Bootstrap 💨
         </h1>
         <Form className="pb-3">
           <Row>
