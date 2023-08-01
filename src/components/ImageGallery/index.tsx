@@ -35,7 +35,10 @@ const ImageGallery: React.FC = () => {
 
   return (
     <>
-      <div className="container-fluid p-5 bg-dark">
+      <div
+        className="container-fluid p-5 bg-dark"
+        data-test-id="container-wrapper"
+      >
         <h1 className="text-center mb-4 text-white">
           🚀 Image Gallery with React, Redux and TypeScript 💨
         </h1>

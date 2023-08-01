@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 import ModalImage from "../ModalImage";
 
 interface CardImageProps {
-  image: any;
+  image?: any;
 }
 
 const CardImage: React.FC<CardImageProps> = ({ image }) => {

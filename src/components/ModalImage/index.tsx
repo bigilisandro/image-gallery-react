@@ -4,7 +4,7 @@ import "./ModalImage.css";
 interface ModalImageProps {
   image?: any;
   show?: boolean;
-  handleClose: () => void;
+  handleClose?: () => void;
 }
 
 const ModalImage: React.FC<ModalImageProps> = ({
@@ -17,6 +17,7 @@ const ModalImage: React.FC<ModalImageProps> = ({
       <Modal
         dialogClassName="modal-fit-content"
         contentClassName="bg-secondary"
+        data-test-id="modal-image"
         size="lg"
         show={show}
         onHide={handleClose}
