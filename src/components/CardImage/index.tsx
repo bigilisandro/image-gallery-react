@@ -1,13 +1,13 @@
-import React, { useRef, useEffect, useState } from "react";
-import "./LazyImage.css";
-import { Figure, Card } from 'react-bootstrap';
+import React, { useState } from "react";
+import "./CardImage.css";
+import { Card } from 'react-bootstrap';
 import ModalImage from '../ModalImage'
 
-interface LazyImageProps {
+interface CardImageProps {
   image?: any;
 };
 
-const LazyImage: React.FC<LazyImageProps> = ({ image }) => {
+const CardImage: React.FC<CardImageProps> = ({ image }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -17,7 +17,7 @@ const LazyImage: React.FC<LazyImageProps> = ({ image }) => {
 
   return (
     <>
-      <Card bg="secondary" border="secondary" className="cursor-pointer" onClick={handleShow}>
+      <Card bg="secondary" border="secondary" data-test-id="component-image" className="cursor-pointer" onClick={handleShow}>
         <Card.Img variant="top" src={`https://i.imgur.com/` + image.cover + `.jpg`} className="lazy-image" />
         <Card.Body>
           <Card.Text>
@@ -30,4 +30,4 @@ const LazyImage: React.FC<LazyImageProps> = ({ image }) => {
   );
 };
 
-export default LazyImage;
+export default CardImage;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import "../../App.css";
-import LazyImage from "../LazyImage/LazyImage";
-import { Form, Row, Col } from 'react-bootstrap'
+import "./ImageGallery.css"
+import CardImage from "../CardImage";
+import { Form, Row, Col, Spinner } from 'react-bootstrap'
 
 function ImageGallery() {
 
@@ -10,11 +10,13 @@ function ImageGallery() {
     const [sort, setSort] = useState('viral'); // Initial filter state
     const [window, setWindow] = useState('day'); // Initial filter state
     const [showViral, setShowViral] = useState('true'); // Initial filter state
+    const [isLoading, setIsLoading] = useState(true); // Initial filter state
 
     const apiImgur = `https://api.imgur.com/3/gallery/${section}/${sort}/${window}/viral/0?showViral=${showViral}`
     const apiKey = '7d924b1673a19ea'
 
     const fetchRequest = async () => {
+        setIsLoading(true)
         const data = await fetch(apiImgur, {
             "headers": {
                 'Authorization': 'Client-ID ' + apiKey,
@@ -25,9 +27,11 @@ function ImageGallery() {
         const result = dataJ.data;
         console.log(result, 'results');
         setRes(result);
+        setIsLoading(false)
       };
       useEffect(() => {
         fetchRequest();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [section, sort, window, showViral]);
 
     return (
@@ -75,11 +79,15 @@ function ImageGallery() {
                     </Row>
                 </Form>
             </div>
-            <div className="container flexbox container-images">
-                {res.map((item, index) => (
-                    <LazyImage image={item} key={index} />
-                ))}
-            </div>
+            {isLoading ?
+                <Spinner animation="border" className="d-flex m-auto mt-3" />
+            :
+                <div className="container flexbox container-images">
+                    {res.map((item, index) => (
+                        <CardImage image={item} key={index} />
+                    ))}
+                </div>
+            }
         </>
     );
 }

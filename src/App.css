@@ -18,9 +18,6 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-.container-images {
-  margin-top: -15px;
-}
 .flexbox {
   display: grid;
 

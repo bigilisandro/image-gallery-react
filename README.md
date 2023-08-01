@@ -1,28 +1,25 @@
 
-# Lazy-Images-Gallery [#Demo](https://lazy-images-gallery.netlify.app)
-![alt text](https://raw.githubusercontent.com/hocineismail/Lazy-Images-Gallery/main/public/gallary.png?raw=true)
+# Image-Gallery-React-Imgur [#Demo](https://image-gallery-react-imgur.netlify.app/)
+
 ## 📜 Description
 
-Lazy-Images-Gallery is a dynamic image gallery that utilizes lazy loading techniques inspired by popular platforms like Unsplash and Pinterest. This project leverages the Intersection Observer API to efficiently load images as they come into the viewport, enhancing performance and user experience.
-
-## 🎯 Features
-- Lazy Loading: Images are loaded on-demand as the user scrolls, ensuring that only the visible images are loaded initially, reducing the initial load time and optimizing resource usage.
-- Intersection Observer: The Intersection Observer API is used to detect when images enter the viewport, triggering the loading process and improving the overall performance by reducing unnecessary network requests.
-- Responsive Design: The gallery is designed to be responsive, adapting to different screen sizes and providing an optimal viewing experience on various devices.
+This project is a Image Gallery that consumes images from Imgur API and allows users to filter results in section, sort, window and viral. The Gallery uses React, Redux, TypeScript and React-Bootstrap as Frontend tools.
 
 ## 🌐 Links
 
-* [Deployed] [ Lazy-Images-Gallery](https://lazy-images-gallery.netlify.app)
+* [Deployed] [ Image-Gallery-React-Imgur](https://image-gallery-react-imgur.netlify.app/)
  
 
 ## 💻 Tech Used
 
-- [x] React
+- [x] React/Redux
 - [x] Tests: Jest + react-testing-library / enzyme
 - [x] Typescript
+- [x] React-Bootstrap
  
  
-# Pre-requisites 
+# Pre-requisites
+
 - Install [Node.js](https://nodejs.org/en/)
 
 To run program, run the following command. 
@@ -33,20 +30,14 @@ To run program, run the following command.
  
 1. Use the terminal to execute the following commands:
     - `npm install` or `yarn install` to install the dependencies for react application
-    - `npm start` to start the the application
+    - `npm start` or `yarn start` to start the the application
 
-1. Open your browser on `http://localhost:3000` to see the page
+1. Open your browser on `http://localhost:3000` to see the page. Imgur API doesnt work in localhost enviorments, so you'll have to open your browser on `http://192.168.0.186:3000/`, if not you are gonna have lot of errors.
+
+
 ## 🔨 Running Test
+
 1. To run tests, run the following command.
 
-```bash
-  npm run test
-```
+- `npm run test` or `yarn test` to run the tests.
 
-## Author
-
-- [@Ismail Hocine](https://github.com/hocineismail)
-
-## ✔️ Prerequisites
-
-* Node.js
